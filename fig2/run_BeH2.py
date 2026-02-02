@@ -2,7 +2,7 @@ from vqengine import *
 
 Name = "BeH2"
 dt = 0.1
-total_t = 1.0
+total_t = 10.0
 
 # Define geometry
 geometry = [("Be", (0., 0., 0.)), ("H", (0., 0., 0.75)), ("H", (0., 0., -0.75))]

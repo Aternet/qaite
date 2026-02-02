@@ -1,16 +1,16 @@
 from vqengine import *
+import sys
 
-Name = "H4"
-r = 1.5
+r = float(sys.argv[1])
+Name = f"BeH2_r_{r}"
 dt = 0.1
 total_t = 10.0
 
 # Define geometry
-geometry = [("H", (0., 0., n*r)) for n in range(4)]
-
+geometry = [("Be", (0., 0., 0)), ("H", (0., 0., r)), ("H", (0., 0., -r))]
 
 # Initialize Molecule
-mol = Molecule(geometry, multiplicity=1, freeze=0)
+mol = Molecule(geometry, multiplicity=1, freeze=2)
 H, hf = mol.get_hamiltonian(transform='jw')
 
 # Generate Pools
